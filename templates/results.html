@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis Results</title>
+</head>
+<body>
+    <h1>Results of the Analysis</h1>
+    <p>Model Accuracy: {{ accuracy }}</p>
+    <h2>Predictions</h2>
+    <table border="1">
+        <tr>
+            <th>Actual</th>
+            <th>Predicted</th>
+        </tr>
+        {% for actual, predicted in y_test|zip(y_pred) %}
+        <tr>
+            <td>{{ actual }}</td>
+            <td>{{ predicted }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Go Back</a>
+</body>
+</html>
